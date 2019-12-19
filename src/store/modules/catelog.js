@@ -1,5 +1,5 @@
 // 走vuex的dispatch请求
-import * as catelogApi from '../../utils/api'
+// import * as catelogApi from '../../utils/api'
 const catelog = {
   state: {
     statusObjList: {},
@@ -40,37 +40,37 @@ const catelog = {
 
 function getActions() {
   var returnVal = {}
-    [catelogApi].map(_apiObj => {
-      Object.keys(_apiObj).forEach(_item => {
-        returnVal[_item] = ({
-          commit
-        }, obj) => {
-          return new Promise((resolve, reject) => {
-            _apiObj[_item](obj).then(response => {
-              if (resolveList.hasOwnProperty(_item)) {
-                resolve(resolveList[_item](response, commit))
-              } else {
-                resolve(response)
-              }
-            }).catch(error => {
-              if (rejectList.hasOwnProperty(_item)) {
-                reject(rejectList[_item(error, commit)])
-              } else {
-                reject(error)
-              }
-            })
-          })
-        }
-      })
-    })
+    // [catelogApi].map(_apiObj => {
+    //   Object.keys(_apiObj).forEach(_item => {
+    //     returnVal[_item] = ({
+    //       commit
+    //     }, obj) => {
+    //       return new Promise((resolve, reject) => {
+    //         _apiObj[_item](obj).then(response => {
+    //           if (resolveList.hasOwnProperty(_item)) {
+    //             resolve(resolveList[_item](response, commit))
+    //           } else {
+    //             resolve(response)
+    //           }
+    //         }).catch(error => {
+    //           if (rejectList.hasOwnProperty(_item)) {
+    //             reject(rejectList[_item(error, commit)])
+    //           } else {
+    //             reject(error)
+    //           }
+    //         })
+    //       })
+    //     }
+    //   })
+    // })
   return returnVal
 }
 
-let resolveList = {
-  statusQuery(response, commit) {
-    commit('SET_CATA_LOG_STATUS_OBJ', response.data)
-    return response
-  }
-}
-let rejectList = {}
+// let resolveList = {
+  // statusQuery(response, commit) {
+  //   commit('SET_CATA_LOG_STATUS_OBJ', response.data)
+  //   return response
+  // }
+// }
+// let rejectList = {}
 export default catelog

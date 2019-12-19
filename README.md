@@ -6,6 +6,7 @@
 - 本地代理  解决跨域
 - 打包设置本地相对路径
 - vuex仓库的使用
+- 高亮格式化代码
 
 ## Project setup
 ```
@@ -56,6 +57,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 8.`git reflog` 查看历史版本号
 
 9.git reset --hard 版本号 实现版本回退
+
+30.本地代码与远程分支做关联 `git remote add origin git@'XXX仓库地址'`
 
 
 ### 配置eslint配置化  请查看.eslintrc.js
@@ -126,4 +129,10 @@ export default {
   computed: ... mapGetters(['strLength'])
 }
 ```
+### 高亮格式化代码
 
+1.安装 v-highlightjs 并在main.js引入
+
+2.Vue.use(v-highlightjs)
+
+3.引入css放入公共文件,main中引入 使用<pre v-highlightjs><code calss='xxx'>html代码<code><pre>即可使用
