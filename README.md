@@ -130,9 +130,19 @@ export default {
 }
 ```
 ### 高亮格式化代码
-
+```javascript
+  <pre v-highlightjs>
+    <code>
+      {{item}}
+      <!-- {{JSON.parse(item.xxx)}} -->
+    </code>
+  </pre>
+```
 1.安装 v-highlightjs 并在main.js引入
 
 2.Vue.use(v-highlightjs)
 
-3.引入css放入公共文件,main中引入 使用<pre v-highlightjs><code calss='xxx'>html代码<code><pre>即可使用
+3.引入css放入公共文件,main中引入 使用
+
+`<pre v-highlightjs>` `<code calss='xxx'> `html代码 `<code>``<pre>`即可使用
+
