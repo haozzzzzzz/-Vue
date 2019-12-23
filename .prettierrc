@@ -2,6 +2,8 @@
     "prettier.tabWidth": 4,
     "prettier.semi": false,
     "prettier.singleQuote": true,
+    "singleQuote":true,
+    "semi":false,
     "prettier.printWidth": 100,
     "prettier.trailingComma": "es5",
     "prettier.arrowParents": "always",

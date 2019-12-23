@@ -1,10 +1,10 @@
 import serve from './request'
 
-export const headUrl = 'www.baidu.com'
+export const headUrl = 'http://192.168.210.120:5000'
 
 export function dataList(obj) {
   return serve({
-    url: headUrl + 'api/v1/info',
+    url: headUrl + '/api',
     method: 'get',
     data: obj
   })
@@ -12,7 +12,7 @@ export function dataList(obj) {
 
 export function dataInfoDetail(obj) {
   return serve({
-    url: headUrl + 'api/v1/detail',
+    url: headUrl + '/api/v1/detail',
     method: 'post',
     postType: 'json',
     data: obj,
@@ -21,7 +21,7 @@ export function dataInfoDetail(obj) {
 
 export function dataListId(_id) {
   return serve({
-    url: headUrl + 'api/v1/detail/' + _id,
+    url: headUrl + '/api/v1/detail/' + _id,
     method: 'post',
     postType: 'json',
   })

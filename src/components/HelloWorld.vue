@@ -1,58 +1,99 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <el-container>
+      <el-header>快餐收银系统</el-header>
+      <el-container>
+        <el-aside width="200px" class="left-nav">
+          <ul>
+            <li v-for="(item, index) in getDataList" :key="index">
+              <div>{{item.title}}</div>
+            </li>
+          </ul>
+        </el-aside>
+        <el-main>Main</el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  data() {
+    return {
+      getDataList: [
+        {
+          title: '店面',
+          id: 1,
+        },
+        {
+          title: '经典套餐',
+          id: 2,
+        },
+        {
+          title: '人气推荐',
+          id: 3,
+        },
+        {
+          title: '优惠折扣',
+          id: 4,
+        },
+        {
+          title: '新品推荐',
+          id: 5,
+        },
+        {
+          title: '随心搭配',
+          id: 6,
+        },
+        {
+          title: '饮料小吃',
+          id: 7,
+        },
+        {
+          title: '关于我们',
+          id: 8,
+        },
+      ],
+    };
+  },
+  methods: {
+
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<style lang='less' scoped>
+.el-header {
+  background-color: #80bbe8;
+  line-height: 60px;
+  color: #fff;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.el-aside {
+  background-color: darkslategray;
+  line-height: 600px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.myAside {
+  float: left;
 }
-a {
-  color: #42b983;
+.left-nav {
+  color: #fff;
+  font-size: 10px;
+  height: 600px;
+  background-color: #80bbe8;
+  width: 5%;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      width: 100%;
+      text-align: center;
+      height: 50xp;
+      line-height: 50px;
+      border-bottom: 1px solid #80bbe8;
+      box-sizing: border-box;
+    }
+  }
 }
 </style>
