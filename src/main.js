@@ -40,6 +40,8 @@ Vue.use(VuehighlightJS)
 // Vue.prototype.$http = http
 
 Vue.prototype.$http = axios
+// require('../node_modules/mockjs/dist/mock')
+require('./mock')
 // 第一种 挂载原型 使用axios请求方式
 // 第二种是用store.actions 的 this.$store.dispatch请求方式
 

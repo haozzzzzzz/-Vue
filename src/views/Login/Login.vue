@@ -27,41 +27,67 @@ export default {
         passWord: '123456'
       },
       top: 'right'
-    };
+    }
   },
   methods: {
+    // login() {
     login() {
-      this.$http.get('http://192.168.210.120:8080/login').then(res => {
-        console.log(res);
-        if (res.status === 200) {
-          this.$router.push('/home');
-        }
-      });
+      this.$http
+        .get('/user/userInfo')
+        .then(res => {
+          console.log(res)
+          if (res.status === 200) {
+            this.$router.push('/home')
+          } else {
+            this.$message.error(res.message)
+          }
+        })
+        .catch(e => {
+          console.log(e)
+        })
     },
-    logout() {
-      let params = {
-        admin: 1,
-        passWord: 2
-      };
-      this.$store.dispatch('dataInfoDetail', params).then(res => {
-        console.log(res);
-      });
-    },
-    logoutttt() {
-      this.$store.dispatch('dataList').then(res => {
-        console.log(res);
-      });
-    },
+    //   this.$http.get('http://192.168.210.120:8080/login').then(res => {
+    //     console.log(res)
+    //     if (res.status === 200) {
+    //       this.$router.push('/home')
+    //     }
+    //   })
+    // },
+    // logout() {
+    //   let params = {
+    //     admin: 1,
+    //     passWord: 2
+    //   }
+    //   this.$store.dispatch('dataInfoDetail', params).then(res => {
+    //     console.log(res)
+    //   })
+    // },
+    // logoutttt() {
+    //   this.$store.dispatch('dataList').then(res => {
+    //     console.log(res)
+    //   })
+    // },
+    // test() {
+    //   this.$http
+    //     .get('/user/userInfo')
+    //     .then(res => {
+    //       console.log(res)
+    //     })
+    //     .catch(e => {
+    //       console.log(e)
+    //     })
+    // },
     reset() {
       this.formLabelAlign = {
         userName: '',
         passWord: ''
-      };
-      this.logout()
-      this.logoutttt()
+      }
+      this.login()
+      // this.logout()
+      // this.logoutttt()
     }
   }
-};
+}
 </script>
 <style lang='less' scoped>
 .myTitle {

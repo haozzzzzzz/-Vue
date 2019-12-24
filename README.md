@@ -7,6 +7,8 @@
 - 打包设置本地相对路径
 - vuex仓库的使用
 - 高亮格式化代码
+- MockJs写假数据,返回获取Json数据 查看mock
+http://mockjs.com/examples.html#Name mock用法文档
 
 ## Project setup
 ```

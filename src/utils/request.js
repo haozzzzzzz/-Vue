@@ -6,8 +6,8 @@ const serve = axios.create({
   timeout: 6500, // request timeout 请求超时
 })
 
-// 2.拦截器
-
+// 2.拦截器    //请求头 响应头里面的参数详情
+// https://blog.csdn.net/weixin_37861326/article/details/82216068
 //  2.1  拦截请求
 serve.interceptors.request.use((config) => {
   // ...
