@@ -1,20 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="nav"> -->
-      <!-- <router-link to="/">Home</router-link>| -->
-      <!-- <router-link to="/about">About</router-link> -->
-      <!-- <p v-for="(item, index) in msg" :key="index">
-       <pre v-highlightjs>
-         <code>
-           {{item}} -->
-           <!-- {{JSON.parse(item.xxx)}} -->
-         <!-- </code>
-       </pre>
-      </p> -->
-      <!-- <div ref="myBox" style="width:600px;height:400px"> -->
-
-      <!-- </div> -->
-    <!-- </div> -->
     <router-view />
   </div>
 </template>
