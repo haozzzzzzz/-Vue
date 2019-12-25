@@ -2,19 +2,16 @@
   <div>
     <el-container>
       <el-header>
-        <div style="margin-left:10px; font-size:22px;">
-          爱心小店
-        </div>
+        <div style="margin-left:10px; font-size:22px;">爱心小店</div>
         <div style="margin-right:10px; font-size:12px;">
           <el-dropdown>
             <i class="el-icon-setting" style="margin-right: 15px"></i>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>查看</el-dropdown-item>
-              <el-dropdown-item>新增</el-dropdown-item>
-              <el-dropdown-item>删除</el-dropdown-item>
+              <el-dropdown-item @click.native="OutClick">注销登录</el-dropdown-item>
+              <el-dropdown-item @click.native="resetPas">修改密码</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>王小虎</span>
+          <span>{{name}}</span>
         </div>
       </el-header>
     </el-container>
@@ -23,8 +20,26 @@
 
 <script>
 export default {
+  props: [],
   data() {
-    return {}
+    return {
+      name: ''
+    }
+  },
+  methods: {
+    OutClick() {
+      this.$router.push('/Login')
+    },
+    resetPas() {
+      this.$message.error('不让修改密码,哈哈~')
+    }
+  },
+  created() {
+    this.$nextTick(() => {
+      console.log(this.$store.getters.getNameByGetters)
+      this.name = localStorage.getItem('key')
+      console.log(this.name)
+    })
   }
 }
 </script>

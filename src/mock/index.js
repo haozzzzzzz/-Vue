@@ -1,13 +1,13 @@
 const Mock = require('mockjs')
 
-Mock.mock('/user/userInfo', 'get', require('./json/userInfo'))
+// Mock.mock('/user/userInfo', 'get', require('./json/userInfo'))
 
-// const Random = Mock.Random
-// const arrlist = Random.cname()
-// console.log(arrlist);
-// const JsonObj = require('./json/userInfo')
-// JsonObj.Cname = arrlist
-// Mock.mock('/user/userInfo', 'get', JsonObj)
+const Random = Mock.Random
+const arrlist = Random.cname()
+console.log(arrlist);
+const JsonObj = require('./json/userInfo')
+JsonObj.Cname = arrlist
+Mock.mock('/user/userInfo', 'get', JsonObj)
 // 往对象里面加一个随机出现的中文名 这里没用到
 
 // const util = require('./util')

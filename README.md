@@ -9,6 +9,7 @@
 - 高亮格式化代码
 - MockJs写假数据,返回获取Json数据 查看mock
 http://mockjs.com/examples.html#Name mock用法文档
+- Vuex 使用(存取 看后面详情介绍)
 
 ## Project setup
 ```
@@ -147,4 +148,21 @@ export default {
 3.引入css放入公共文件,main中引入 使用
 
 `<pre v-highlightjs>` `<code calss='xxx'> `html代码 `<code>``<pre>`即可使用
+
+### vuex 使用 
+- 1. 在全局使用store,调用的时候 
+```javascript 
+this.$store.commit('方法名',参数)      <===== 存值
+例:this.$store.commit('getName', this.Name)
+mutations 里面记得要 return
+localStorage.setItem('key', state.name)
+=>(调用store里面的mutations的方法,并用localStorage来存值,防止页面刷新,从store数据丢失的问题)
+```
+- 2. 在页面取值
+``` javascript 
+this.$store.getters.方法名        <====== 取值
+例:this.$store.getters.getNameByGetters
+getters 里面记得要 return
+localStorage.getItem('key')
+```
 

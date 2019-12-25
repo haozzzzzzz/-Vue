@@ -26,7 +26,8 @@ export default {
         userName: 'admin',
         passWord: '123456'
       },
-      top: 'right'
+      top: 'right',
+      Name: ''
     }
   },
   methods: {
@@ -37,6 +38,8 @@ export default {
         .then(res => {
           console.log(res)
           if (res.status === 200) {
+            this.Name = res.data.Cname
+            this.$store.commit('getName', this.Name)
             this.$router.push('/home')
           } else {
             this.$message.error(res.message)
